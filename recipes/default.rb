@@ -16,3 +16,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+execute "yum -y update" do
+  user "root"
+  action :run
+end
+
+include_recipe "yum::epel"
+include_recipe "yum::remi"
+include_recipe "yum::repoforge"
